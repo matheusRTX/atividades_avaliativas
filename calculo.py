@@ -33,10 +33,14 @@ def periodo():
     return simulacao_lista, simulacao_dicionario # Esta linha retorna para minha função inicial, duas listas, uma lista de listas e uma lista de dicionários.
 
 def meta():
-    valor_inicial = float(input("Digite o valor inicial: "))
-    aporte_mensal = float(input("Digite o aporte mensal: "))
-    taxa = float(input("Digite o valor da taxa (em percentual): "))
-    meta = float(input("Digite a meta a ser alcançada: "))
+    try:
+        valor_inicial = float(input("Digite o valor inicial: "))
+        aporte_mensal = float(input("Digite o aporte mensal: "))
+        taxa = float(input("Digite o valor da taxa (em percentual): "))
+        meta = float(input("Digite a meta a ser alcançada: "))
+    except:
+        print("Valores inválidos, retornando ao menu inicial.")
+        return []
     simulacao_lista = [] # Lista que vai receber uma lista com os dados da semana para salvar em um arquivo .csv ou .json
     simulacao_dicionario = [] # Lista que vai receber um dicionário com os dados da semana para salvar em um arquivo .csv ou .json
     saldo = valor_inicial
